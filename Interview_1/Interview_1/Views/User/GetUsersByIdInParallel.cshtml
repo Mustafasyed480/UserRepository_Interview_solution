@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Interview_1.Models.User>
+
+@{
+    ViewData["Title"] = "GetUsersByIdInParallel";
+}
+
+<h1>GetUsersByIdInParallel</h1>
+
+<p>
+    
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+          
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+          
+        </tr>
+}
+    </tbody>
+</table>

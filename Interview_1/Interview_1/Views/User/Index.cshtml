@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Interview_1.Models.User>
+
+@{
+    ViewData["Title"] = "Index - GetAllUsers";
+}
+
+<h3>Index-GetAllUsers</h3>
+
+<p>
+ @*   <a asp-action="Create">Create New</a>*@
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+           
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+          
+        </tr>
+}
+    </tbody>
+</table>
+@*<div><button action="GetUsersByFirstAndLastName" class="btn btn-default btn-primary" onclick="location.href='@Url.Action("GetUsersByFirstAndLastName", "User",new{id=@Model.})'">GetUsersByFirstAndLastName</button></div>
+<br />
+
+<div><button action="GetTransactionCountByUserId"  class="btn btn-default btn-info">GetTransactionCountByUserId</button></div>
+
+<br />
+<div><button action="GetUnpaidAmountByUser" class="btn btn-default btn-warning">GetUnpaidAmountByUser</button></div>
+<br />
+<div><button action="GetUsersByIdInParallel" class="btn btn-default btn-danger">GetUsersByIdInParallel</button></div>
+<br />
+<div>
+<button action="GetUsersOlderThanGivenAge" class="btn btn-default btn-success">GetUsersOlderThanGivenAge</button>
+</div>*@
+
+<div><b>Controller Methods:</b></div>
+<div>GetUsersByFirstAndLastName</div>
+<div><h6>Ex:  https://localhost:<port>/User/GetUsersByFirstAndLastName?FirstName=Ward&LastName=Karla</h6></div>
+<div>GetTransactionCountByUserId</div>
+<div><h6>Ex:  https://localhost:<port>/User/GetTransactionCountByUserId/1</h6></div>
+<div>GetUnpaidAmountByUser</div>
+<div><h6>Ex:  https://localhost:<port>/User/GetUnpaidAmountByUser/2</h6></div>
+<div>GetUsersByIdInParallel</div>
+<div><h6>Ex:  https://localhost:<port>/User/GetUsersByIdInParallel/3</h6></div>
+<div>GetUsersOlderThanGivenAge</div>
+<div><h6>Ex:  https://localhost:<port>/User/GetUsersOlderThanGivenAge/20</h6></div>
+<div>UserNotFound</div>
+<div><h6>Ex:  https://localhost:<port>/User/GetTransactionCountByUserId/99</h6></></div>
